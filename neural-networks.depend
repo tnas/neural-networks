@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1569013914 source:d:\myprojects\neural-networks\main.cpp
+	<iostream>
+	"Perceptron.h"
+	"DataSet.h"
+	"DataSetAndBitwise.h"
+
+1569013905 d:\myprojects\neural-networks\include\perceptron.h
+	"DataSet.h"
+
+1569014603 source:d:\myprojects\neural-networks\src\perceptron.cpp
+	"Perceptron.h"
+	"Trace.h"
+	<iostream>
+	<vector>
+
+1569009411 source:d:\myprojects\neural-networks\src\dataset.cpp
+	"DataSet.h"
+	<iostream>
+
+1569009383 d:\myprojects\neural-networks\include\dataset.h
+
+1569005347 source:d:\myprojects\neural-networks\src\datasetandbitwise.cpp
+	"DataSetAndBitwise.h"
+
+1569003076 d:\myprojects\neural-networks\include\datasetandbitwise.h
+	<DataSet.h>
+
+1569001688 source:d:\myprojects\neural-networks\src\datasetabpattern.cpp
+	"DataSetABPattern.h"
+
+1569001678 d:\myprojects\neural-networks\include\datasetabpattern.h
+	<DataSet.h>
+
+1569015125 d:\myprojects\neural-networks\include\trace.h
+
+1569015136 source:d:\myprojects\neural-networks\src\trace.cpp
+	"Trace.h"
+	<iostream>
+
