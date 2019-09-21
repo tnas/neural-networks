@@ -1,4 +1,4 @@
-#include "DataSetABPattern.h"
+#include "../include/DataSetABPattern.h"
 
 DataSetABPattern::~DataSetABPattern()
 {

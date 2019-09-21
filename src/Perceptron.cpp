@@ -1,5 +1,5 @@
-#include "Perceptron.h"
-#include "Trace.h"
+#include "../include/Perceptron.h"
+#include "../include/Trace.h"
 #include <iostream>
 #include <vector>
 
@@ -44,7 +44,7 @@ void Perceptron::run(const DataSet* dataSet)
     float result, error;
     int output, countError;
     this->iterations = 1;
-
+    vector<float> currWeights;
     error = 1;
 
     while (error > this->thresholdError)
@@ -60,7 +60,7 @@ void Perceptron::run(const DataSet* dataSet)
             {
                 output = 1;
             }
-            else if (result < this->indefinitionRate)
+            else if (result < -this->indefinitionRate)
             {
                 output = -1;
             }
@@ -76,16 +76,20 @@ void Perceptron::run(const DataSet* dataSet)
                     this->weights[i] += this->learningRate * dataSet->getDesiredOutput()[sample] *
                         dataSet->getDataMatrix()[sample][i];
                 }
-
                 currBias += this->learningRate * dataSet->getDesiredOutput()[sample];
                 ++countError;
             }
 
+            for (int i = 0; i < this->inputDimension; currWeights.push_back(this->weights[i++]));
+
             tracer.push_back(Trace(this->iterations, this->inputDimension,
-                               this->weights, currBias, result));
+                currWeights, currBias, result));
+
+            currWeights.clear();
         }
 
-        error = countError/dataSet->getNumberOfSamples();
+        error = (float) countError/dataSet->getNumberOfSamples();
+
         ++this->iterations;
     }
 }
