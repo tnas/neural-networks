@@ -57,24 +57,39 @@
 1569067983 /home/thiago/projects/neural-networks/include/DataSetAndBitwise.h
 	"DataSet.h"
 
-1569067990 source:/home/thiago/projects/neural-networks/src/DataSetABPattern.cpp
+1569084619 source:/home/thiago/projects/neural-networks/src/DataSetABPattern.cpp
 	"../include/DataSetABPattern.h"
 
-1569068027 /home/thiago/projects/neural-networks/include/DataSetABPattern.h
+1569084899 /home/thiago/projects/neural-networks/include/DataSetABPattern.h
 	"DataSet.h"
 
-1569073680 source:/home/thiago/projects/neural-networks/src/Perceptron.cpp
+1569091525 source:/home/thiago/projects/neural-networks/src/Perceptron.cpp
 	"../include/Perceptron.h"
 	"../include/Trace.h"
 	<iostream>
 	<vector>
 
-1569066776 /home/thiago/projects/neural-networks/include/Perceptron.h
+1569091504 /home/thiago/projects/neural-networks/include/Perceptron.h
 	"DataSet.h"
 
-1569073795 source:/home/thiago/projects/neural-networks/main.cpp
+1569092280 source:/home/thiago/projects/neural-networks/main.cpp
 	<iostream>
 	"include/Perceptron.h"
 	"include/DataSet.h"
 	"include/DataSetAndBitwise.h"
+	"include/DataSetABPattern.h"
+	"include/DataSetClassifier.h"
+	"include/DataSetClassifierTest.h"
+
+1569085545 source:/home/thiago/projects/neural-networks/src/DataSetClassifier.cpp
+	"DataSetClassifier.h"
+
+1569084795 /home/thiago/projects/neural-networks/include/DataSetClassifier.h
+	<DataSet.h>
+
+1569087299 source:/home/thiago/projects/neural-networks/src/DataSetClassifierTest.cpp
+	"DataSetClassifierTest.h"
+
+1569087175 /home/thiago/projects/neural-networks/include/DataSetClassifierTest.h
+	<DataSet.h>
 

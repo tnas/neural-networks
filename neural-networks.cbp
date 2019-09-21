@@ -32,7 +32,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/DataSet.h" />
+		<Unit filename="include/DataSetABPattern.h" />
+		<Unit filename="include/DataSetAndBitwise.h" />
+		<Unit filename="include/Perceptron.h" />
+		<Unit filename="include/Trace.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/DataSet.cpp" />
+		<Unit filename="src/DataSetABPattern.cpp" />
+		<Unit filename="src/DataSetAndBitwise.cpp" />
+		<Unit filename="src/Perceptron.cpp" />
+		<Unit filename="src/Trace.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
