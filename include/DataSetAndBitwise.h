@@ -1,7 +1,7 @@
 #ifndef DATASETANDBITWISE_H
 #define DATASETANDBITWISE_H
 
-#include <DataSet.h>
+#include "DataSet.h"
 
 
 class DataSetAndBitwise : public DataSet

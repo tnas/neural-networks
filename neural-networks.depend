@@ -38,3 +38,43 @@
 	"Trace.h"
 	<iostream>
 
+1569073091 source:/home/thiago/projects/neural-networks/src/Trace.cpp
+	"../include/Trace.h"
+	<iostream>
+
+1569073076 /home/thiago/projects/neural-networks/include/Trace.h
+	<vector>
+
+1569067959 source:/home/thiago/projects/neural-networks/src/DataSet.cpp
+	"../include/DataSet.h"
+	<iostream>
+
+1569066776 /home/thiago/projects/neural-networks/include/DataSet.h
+
+1569068920 source:/home/thiago/projects/neural-networks/src/DataSetAndBitwise.cpp
+	"../include/DataSetAndBitwise.h"
+
+1569067983 /home/thiago/projects/neural-networks/include/DataSetAndBitwise.h
+	"DataSet.h"
+
+1569067990 source:/home/thiago/projects/neural-networks/src/DataSetABPattern.cpp
+	"../include/DataSetABPattern.h"
+
+1569068027 /home/thiago/projects/neural-networks/include/DataSetABPattern.h
+	"DataSet.h"
+
+1569073680 source:/home/thiago/projects/neural-networks/src/Perceptron.cpp
+	"../include/Perceptron.h"
+	"../include/Trace.h"
+	<iostream>
+	<vector>
+
+1569066776 /home/thiago/projects/neural-networks/include/Perceptron.h
+	"DataSet.h"
+
+1569073795 source:/home/thiago/projects/neural-networks/main.cpp
+	<iostream>
+	"include/Perceptron.h"
+	"include/DataSet.h"
+	"include/DataSetAndBitwise.h"
+

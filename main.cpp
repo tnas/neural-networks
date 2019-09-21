@@ -1,7 +1,7 @@
 #include <iostream>
-#include "Perceptron.h"
-#include "DataSet.h"
-#include "DataSetAndBitwise.h"
+#include "include/Perceptron.h"
+#include "include/DataSet.h"
+#include "include/DataSetAndBitwise.h"
 
 using namespace std;
 
@@ -11,7 +11,7 @@ int main()
     dataSet->defineDesiredOutput();
     dataSet->buildDataMatrix();
 
-    Perceptron perceptron = Perceptron(1.0, 0.0, 0.2, 0.1);
+    Perceptron perceptron = Perceptron(1.0, 0.0, 0.2, 0.0);
     perceptron.run(dataSet);
     perceptron.printTrace();
 
