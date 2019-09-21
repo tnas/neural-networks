@@ -3,15 +3,14 @@
 
 #include "DataSet.h"
 
-
+/**
+ * XOR modeled as A and B
+ */
 class DataSetABPattern : public DataSet
 {
     public:
-        /** Default constructor */
         DataSetABPattern(int numberOfSamples, int inputDimension):
             DataSet(numberOfSamples, inputDimension) {};
-        /** Default destructor */
-        virtual ~DataSetABPattern();
         void buildDataMatrix();
         void defineDesiredOutput();
 };

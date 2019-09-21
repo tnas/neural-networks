@@ -6,27 +6,30 @@
 class Perceptron
 {
     const float learningRate; // alpha
-    const float bias; // theta
     const float indefinitionRate; // delta
     const float thresholdError;
-
-    float* weights;
+    const int maxIterations;
     int inputDimension;
-    int iterations;
+
+    float bias; // theta
+    float* weights;
 
     void initializeWeights();
+    int applyActivationFunction(float result);
 
     public:
-        Perceptron(float learningRate, float bias, float indefinitionRate, float thresholdError):
+        Perceptron(float learningRate, float bias, float indefinitionRate, float thresholdError, int maxIterations):
             learningRate(learningRate),
             bias(bias),
             indefinitionRate(indefinitionRate),
             thresholdError(thresholdError),
+            maxIterations(maxIterations),
             weights(nullptr){};
         virtual ~Perceptron();
 
-        void run(const DataSet* dataSet);
         void printTrace();
+        void run(const DataSet* dataSet);
+        void test(const DataSet* dataSet);
 };
 
 #endif // PERCEPTRON_H
