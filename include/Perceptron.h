@@ -2,34 +2,20 @@
 #define PERCEPTRON_H
 
 #include "DataSet.h"
+#include "NeuralNetwork.h"
 
-class Perceptron
+class Perceptron : public NeuralNetwork
 {
-    const float learningRate; // alpha
     const float indefinitionRate; // delta
-    const float thresholdError;
-    const int maxIterations;
-    int inputDimension;
-
-    float bias; // theta
-    float* weights;
-
-    void initializeWeights();
-    int applyActivationFunction(float result);
 
     public:
-        Perceptron(float learningRate, float bias, float indefinitionRate, float thresholdError, int maxIterations):
-            learningRate(learningRate),
-            bias(bias),
-            indefinitionRate(indefinitionRate),
-            thresholdError(thresholdError),
-            maxIterations(maxIterations),
-            weights(nullptr){};
-        virtual ~Perceptron();
+        Perceptron(float learningRate, float bias, float indefinitionRate, float thresholdError,
+                   unsigned int maxIterations, unsigned int dimension) :
+            NeuralNetwork(bias, nullptr, dimension, learningRate, thresholdError, maxIterations),
+            indefinitionRate(indefinitionRate) {};
 
-        void printTrace();
+        int applyActivationFunction(float result);
         void run(const DataSet* dataSet);
-        void test(const DataSet* dataSet);
 };
 
 #endif // PERCEPTRON_H

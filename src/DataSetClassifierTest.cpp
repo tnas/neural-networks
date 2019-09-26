@@ -1,4 +1,4 @@
-#include "DataSetClassifierTest.h"
+#include "../include/DataSetClassifierTest.h"
 
 
 void DataSetClassifierTest::buildDataMatrix()
