@@ -1,34 +1,20 @@
-#include "../include/Perceptron.h"
+#include "../../include/nets/Perceptron.h"
 #include <iostream>
-
-int Perceptron::applyActivationFunction(float result)
-{
-    if (result > this->indefinitionRate)
-    {
-        return 1;
-    }
-    else if (result < -this->indefinitionRate)
-    {
-        return -1;
-    }
-    else {
-        return 0;
-    }
-}
 
 void Perceptron::run(const DataSet* dataSet)
 {
-    float result, error;
-    int output, countError;
-    unsigned int iterations = 0;
-    vector<float> currWeights;
-    error = 1;
+    float output, result, error;
+    unsigned int countError, iteration;
+    this->dataSet = dataSet;
+    iteration = error = 1;
 
     this->weights = new float[this->inputDimension];
     for (unsigned int i = 0; i < this->inputDimension; this->weights[i++] = 0);
 
-    while (error > this->thresholdError && iterations < this->maxIterations)
+    do
     {
+        Log log;
+        log.setIteration(iteration);
         countError = 0;
 
         for (int sample = 0; sample < dataSet->getNumberOfSamples(); sample++)
@@ -50,15 +36,19 @@ void Perceptron::run(const DataSet* dataSet)
                 ++countError;
             }
 
-            for (unsigned int i = 0; i < this->inputDimension; currWeights.push_back(this->weights[i++]));
-            this->tracer.push_back(Trace(iterations, this->inputDimension, currWeights, this->bias, result));
-            currWeights.clear();
+            // Tracing
+            log.addTrace(Trace(
+                this->getVector(this->inputDimension, dataSet->getDataMatrix()[sample]),
+                this->getVector(this->inputDimension, this->weights),
+                this->bias, result, output, dataSet->getDesiredOutput()[sample]));
         }
 
         error = (float) countError/dataSet->getNumberOfSamples();
+        log.setError(error);
+        this->addLog(log);
 
-        ++iterations;
-    }
+        ++iteration;
+    } while (error > this->thresholdError && iteration < this->maxIterations && this->evaluateIteration() != 0);
 }
 
 

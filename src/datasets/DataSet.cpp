@@ -1,4 +1,4 @@
-#include "../include/DataSet.h"
+#include "../../include/datasets/DataSet.h"
 #include <iostream>
 
 using namespace std;
@@ -8,7 +8,7 @@ DataSet::DataSet(int numberOfSamples, int inputDimension)
     this->numberOfSamples = numberOfSamples;
     this->inputDimension = inputDimension;
 
-    this->desiredOutput = new int[this->numberOfSamples];
+    this->desiredOutput = new float[this->numberOfSamples];
 
     this->dataMatrix = new float*[this->numberOfSamples];
     for (int i = 0; i < this->numberOfSamples; i++)
@@ -36,7 +36,6 @@ void DataSet::printDesiredOutput()
         cout << this->desiredOutput[pos] << endl;
     }
 }
-
 
 void DataSet::printDataMatrix()
 {
@@ -66,7 +65,7 @@ float** DataSet::getDataMatrix() const
     return this->dataMatrix;
 }
 
-int* DataSet::getDesiredOutput() const
+float* DataSet::getDesiredOutput() const
 {
     return this->desiredOutput;
 }

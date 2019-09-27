@@ -1,28 +1,23 @@
 # depslib dependency file v1.0
-1569534835 source:d:\myprojects\neural-networks\main.cpp
-	<iostream>
-	"include/Perceptron.h"
-	"include/Adaline.h"
-	"include/DataSet.h"
-	"include/DataSetAndBitwise.h"
-	"include/DataSetOrBitwise.h"
-	"include/DataSetABPattern.h"
-	"include/DataSetClassifier.h"
-	"include/DataSetClassifierTest.h"
+1569617062 source:d:\myprojects\neural-networks\main.cpp
+	"include/nets/NeuralNetwork.h"
+	"include/nets/Perceptron.h"
+	"include/nets/Adaline.h"
+	"include/datasets/DataSet.h"
 
-1569535057 d:\myprojects\neural-networks\include\perceptron.h
-	"DataSet.h"
+1569615511 d:\myprojects\neural-networks\include\perceptron.h
+	"datasets/DataSet.h"
 	"NeuralNetwork.h"
 
-1569535143 source:d:\myprojects\neural-networks\src\perceptron.cpp
+1569610252 source:d:\myprojects\neural-networks\src\perceptron.cpp
 	"../include/Perceptron.h"
 	<iostream>
 
-1569512619 source:d:\myprojects\neural-networks\src\dataset.cpp
+1569594339 source:d:\myprojects\neural-networks\src\dataset.cpp
 	"../include/DataSet.h"
 	<iostream>
 
-1569009383 d:\myprojects\neural-networks\include\dataset.h
+1569594210 d:\myprojects\neural-networks\include\dataset.h
 
 1569526103 source:d:\myprojects\neural-networks\src\datasetandbitwise.cpp
 	"../include/DataSetAndBitwise.h"
@@ -36,10 +31,10 @@
 1569512619 d:\myprojects\neural-networks\include\datasetabpattern.h
 	"DataSet.h"
 
-1569512619 d:\myprojects\neural-networks\include\trace.h
+1569604566 d:\myprojects\neural-networks\include\trace.h
 	<vector>
 
-1569512619 source:d:\myprojects\neural-networks\src\trace.cpp
+1569604591 source:d:\myprojects\neural-networks\src\trace.cpp
 	"../include/Trace.h"
 	<iostream>
 
@@ -98,7 +93,7 @@
 1569087175 /home/thiago/projects/neural-networks/include/DataSetClassifierTest.h
 	<DataSet.h>
 
-1569535204 d:\myprojects\neural-networks\include\datasetclassifier.h
+1569589745 d:\myprojects\neural-networks\include\datasetclassifier.h
 	"DataSet.h"
 
 1569512778 d:\myprojects\neural-networks\include\datasetclassifiertest.h
@@ -110,12 +105,12 @@
 1569512953 source:d:\myprojects\neural-networks\src\datasetclassifiertest.cpp
 	"../include/DataSetClassifierTest.h"
 
-1569535069 source:d:\myprojects\neural-networks\src\adaline.cpp
+1569609078 source:d:\myprojects\neural-networks\src\adaline.cpp
 	"../include/Adaline.h"
 
-1569535075 d:\myprojects\neural-networks\include\adaline.h
+1569615551 d:\myprojects\neural-networks\include\adaline.h
 	"NeuralNetwork.h"
-	"DataSet.h"
+	"datasets/DataSet.h"
 
 1569513966 source:d:\myprojects\neural-networks\src\datasetorbitwise.cpp
 	"../include/DataSetOrBitwise.h"
@@ -123,12 +118,124 @@
 1569513710 d:\myprojects\neural-networks\include\datasetorbitwise.h
 	"DataSet.h"
 
-1569533567 d:\myprojects\neural-networks\include\neuralnetwork.h
+1569615527 d:\myprojects\neural-networks\include\neuralnetwork.h
+	"Log.h"
 	"Trace.h"
-	"DataSet.h"
+	"datasets/DataSet.h"
 	<iostream>
 	<vector>
+	<math.h>
 
-1569535102 source:d:\myprojects\neural-networks\src\neuralnetwork.cpp
+1569612708 source:d:\myprojects\neural-networks\src\neuralnetwork.cpp
 	"NeuralNetwork.h"
+
+1569589734 d:\myprojects\neural-networks\include\datasetvectorclassifier.h
+	"DataSet.h"
+
+1569589812 source:d:\myprojects\neural-networks\src\datasetvectorclassifier.cpp
+	"DataSetVectorClassifier.h"
+
+1569608513 d:\myprojects\neural-networks\include\log.h
+	<iostream>
+	<vector>
+	"Trace.h"
+
+1569609356 source:d:\myprojects\neural-networks\src\log.cpp
+	"Log.h"
+
+1569594210 d:\myprojects\neural-networks\include\datasets\dataset.h
+
+1569513698 d:\myprojects\neural-networks\include\datasets\datasetandbitwise.h
+	"DataSet.h"
+
+1569513710 d:\myprojects\neural-networks\include\datasets\datasetorbitwise.h
+	"DataSet.h"
+
+1569512619 d:\myprojects\neural-networks\include\datasets\datasetabpattern.h
+	"DataSet.h"
+
+1569589745 d:\myprojects\neural-networks\include\datasets\datasetclassifier.h
+	"DataSet.h"
+
+1569512778 d:\myprojects\neural-networks\include\datasets\datasetclassifiertest.h
+	"DataSet.h"
+
+1569589734 d:\myprojects\neural-networks\include\datasets\datasetvectorclassifier.h
+	"DataSet.h"
+
+1569615620 source:d:\myprojects\neural-networks\src\datasets\dataset.cpp
+	"../../include/datasets/DataSet.h"
+	<iostream>
+
+1569615684 source:d:\myprojects\neural-networks\src\datasets\datasetabpattern.cpp
+	"../../include/datasets/DataSetABPattern.h"
+
+1569615710 source:d:\myprojects\neural-networks\src\datasets\datasetandbitwise.cpp
+	"../../include/datasets/DataSetAndBitwise.h"
+
+1569615717 source:d:\myprojects\neural-networks\src\datasets\datasetclassifier.cpp
+	"../../include/datasets/DataSetClassifier.h"
+
+1569615724 source:d:\myprojects\neural-networks\src\datasets\datasetclassifiertest.cpp
+	"../../include/datasets/DataSetClassifierTest.h"
+
+1569615731 source:d:\myprojects\neural-networks\src\datasets\datasetorbitwise.cpp
+	"../../include/datasets/DataSetOrBitwise.h"
+
+1569615766 source:d:\myprojects\neural-networks\src\datasets\datasetvectorclassifier.cpp
+	"../../include/datasets/DataSetVectorClassifier.h"
+
+1569616144 source:d:\myprojects\neural-networks\src\common\log.cpp
+	"../../include/common/Log.h"
+
+1569608513 d:\myprojects\neural-networks\include\common\log.h
+	<iostream>
+	<vector>
+	"Trace.h"
+
+1569604566 d:\myprojects\neural-networks\include\common\trace.h
+	<vector>
+
+1569616156 source:d:\myprojects\neural-networks\src\common\trace.cpp
+	"../../include/common/Trace.h"
+	<iostream>
+
+1569616196 source:d:\myprojects\neural-networks\src\nets\adaline.cpp
+	"../../include/nets/Adaline.h"
+
+1569616282 d:\myprojects\neural-networks\include\nets\adaline.h
+	"NeuralNetwork.h"
+	"../datasets/DataSet.h"
+
+1569616268 d:\myprojects\neural-networks\include\nets\neuralnetwork.h
+	"../common/Log.h"
+	"../common/Trace.h"
+	"../datasets/DataSet.h"
+	<iostream>
+	<vector>
+	<math.h>
+
+1569616206 source:d:\myprojects\neural-networks\src\nets\neuralnetwork.cpp
+	"../../include/nets/NeuralNetwork.h"
+
+1569616213 source:d:\myprojects\neural-networks\src\nets\perceptron.cpp
+	"../../include/nets/Perceptron.h"
+	<iostream>
+
+1569616296 d:\myprojects\neural-networks\include\nets\perceptron.h
+	"../datasets/DataSet.h"
+	"NeuralNetwork.h"
+
+1569617674 source:d:\myprojects\neural-networks\src\datasets\datasetfactory.cpp
+	"DataSetFactory.h"
+	"DataSetAndBitwise.h"
+	"DataSetOrBitwise.h"
+	"DataSetABPattern.h"
+	"DataSetClassifier.h"
+	"DataSetClassifierTest.h"
+	"DataSetVectorClassifier.h"
+
+1569617665 d:\myprojects\neural-networks\include\datasets\datasetfactory.h
+	<iostream>
+	"DataSet.h"
 

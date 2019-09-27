@@ -1,4 +1,4 @@
-#include "../include/DataSetABPattern.h"
+#include "../../include/datasets/DataSetABPattern.h"
 
 void DataSetABPattern::buildDataMatrix()
 {

@@ -7,7 +7,7 @@
 class DataSetClassifier : public DataSet
 {
     public:
-        DataSetClassifier(int numberOfSamples, int inputDimension):
+        DataSetClassifier(int numberOfSamples, int inputDimension) :
             DataSet(numberOfSamples, inputDimension) {};
         void buildDataMatrix();
         void defineDesiredOutput();

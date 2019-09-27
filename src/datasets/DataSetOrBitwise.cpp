@@ -1,6 +1,6 @@
-#include "../include/DataSetAndBitwise.h"
+#include "../../include/datasets/DataSetOrBitwise.h"
 
-void DataSetAndBitwise::buildDataMatrix()
+void DataSetOrBitwise::buildDataMatrix()
 {
     this->dataMatrix[0][0] = 1;
     this->dataMatrix[0][1] = 1;
@@ -12,11 +12,10 @@ void DataSetAndBitwise::buildDataMatrix()
     this->dataMatrix[3][1] = -1;
 }
 
-void DataSetAndBitwise::defineDesiredOutput()
+void DataSetOrBitwise::defineDesiredOutput()
 {
     this->desiredOutput[0] = 1;
-    this->desiredOutput[1] = -1;
-    this->desiredOutput[2] = -1;
+    this->desiredOutput[1] = 1;
+    this->desiredOutput[2] = 1;
     this->desiredOutput[3] = -1;
 }
-

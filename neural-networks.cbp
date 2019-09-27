@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -32,17 +34,31 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="include/DataSet.h" />
-		<Unit filename="include/DataSetABPattern.h" />
-		<Unit filename="include/DataSetAndBitwise.h" />
+		<Unit filename="include/Adaline.h" />
+		<Unit filename="include/Log.h" />
+		<Unit filename="include/NeuralNetwork.h" />
 		<Unit filename="include/Perceptron.h" />
 		<Unit filename="include/Trace.h" />
+		<Unit filename="include/datasets/DataSet.h" />
+		<Unit filename="include/datasets/DataSetABPattern.h" />
+		<Unit filename="include/datasets/DataSetAndBitwise.h" />
+		<Unit filename="include/datasets/DataSetClassifier.h" />
+		<Unit filename="include/datasets/DataSetClassifierTest.h" />
+		<Unit filename="include/datasets/DataSetOrBitwise.h" />
+		<Unit filename="include/datasets/DataSetVectorClassifier.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/DataSet.cpp" />
-		<Unit filename="src/DataSetABPattern.cpp" />
-		<Unit filename="src/DataSetAndBitwise.cpp" />
+		<Unit filename="src/Adaline.cpp" />
+		<Unit filename="src/Log.cpp" />
+		<Unit filename="src/NeuralNetwork.cpp" />
 		<Unit filename="src/Perceptron.cpp" />
 		<Unit filename="src/Trace.cpp" />
+		<Unit filename="src/datasets/DataSet.cpp" />
+		<Unit filename="src/datasets/DataSetABPattern.cpp" />
+		<Unit filename="src/datasets/DataSetAndBitwise.cpp" />
+		<Unit filename="src/datasets/DataSetClassifier.cpp" />
+		<Unit filename="src/datasets/DataSetClassifierTest.cpp" />
+		<Unit filename="src/datasets/DataSetOrBitwise.cpp" />
+		<Unit filename="src/datasets/DataSetVectorClassifier.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

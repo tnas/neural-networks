@@ -8,7 +8,7 @@ class DataSet
         int numberOfSamples;
         int inputDimension;
         float** dataMatrix;
-        int* desiredOutput;
+        float* desiredOutput;
 
     public:
         DataSet(int numberOfSamples, int inputDimension);
@@ -22,7 +22,7 @@ class DataSet
         int getInputDimension() const;
         int getNumberOfSamples() const;
         float** getDataMatrix() const;
-        int* getDesiredOutput() const;
+        float* getDesiredOutput() const;
 };
 
 #endif // DATASET_H
