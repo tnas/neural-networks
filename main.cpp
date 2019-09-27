@@ -2,11 +2,17 @@
 #include "include/nets/Perceptron.h"
 #include "include/nets/Adaline.h"
 #include "include/datasets/DataSetFactory.h"
+#include "NetworkRunner.h"
 
 const int EXEC = 3;
 
 int main()
 {
+
+    NetworkRunner netRunner;
+    netRunner.loadConfigurations();
+
+    /*
     DataSetFactory dsFactory;
 
     if (EXEC == 1)
@@ -33,6 +39,7 @@ int main()
         adaline.run(dsFactory.getDataSet(DataSetFactory::CLASSIFIER));
         adaline.test(dsFactory.getDataSet(DataSetFactory::CLASSIFIER_TEST));
     }
+    */
 
     return 0;
 }
