@@ -62,8 +62,8 @@ void DataSetClassifier::defineDesiredOutput()
     this->desiredOutput[8] = 1;
     this->desiredOutput[9] = 1;
     this->desiredOutput[10] = 1;
-    this->desiredOutput[11] = 1;
 
+    this->desiredOutput[11] = -1;
     this->desiredOutput[12] = -1;
     this->desiredOutput[13] = -1;
     this->desiredOutput[14] = -1;
@@ -74,7 +74,6 @@ void DataSetClassifier::defineDesiredOutput()
     this->desiredOutput[19] = -1;
     this->desiredOutput[20] = -1;
     this->desiredOutput[21] = -1;
-    this->desiredOutput[22] = -1;
 }
 
 

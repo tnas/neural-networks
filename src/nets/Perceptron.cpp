@@ -48,7 +48,7 @@ void Perceptron::run(const DataSet* dataSet)
         this->addLog(log);
 
         ++iteration;
-    } while (error > this->thresholdError && iteration < this->maxIterations && this->evaluateIteration() != 0);
+    } while (this->evaluateIterationError() > this->thresholdError && iteration <= this->maxIterations);
 }
 
 

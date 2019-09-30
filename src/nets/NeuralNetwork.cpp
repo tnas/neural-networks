@@ -64,7 +64,7 @@ float NeuralNetwork::getCurrentQuadraticError()
     return error / 2;
 }
 
-int NeuralNetwork::evaluateIteration()
+int NeuralNetwork::evaluateIterationError()
 {
     float result, output;
     int countError;

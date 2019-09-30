@@ -36,6 +36,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/NetworkRunner.h" />
 		<Unit filename="include/common/Log.h" />
 		<Unit filename="include/common/Trace.h" />
 		<Unit filename="include/datasets/DataSet.h" />
@@ -51,6 +52,7 @@
 		<Unit filename="include/nets/Perceptron.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="net.conf" />
+		<Unit filename="src/NetworkRunner.cpp" />
 		<Unit filename="src/common/Log.cpp" />
 		<Unit filename="src/common/Trace.cpp" />
 		<Unit filename="src/datasets/DataSet.cpp" />

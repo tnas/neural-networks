@@ -151,15 +151,10 @@ void NetworkRunner::execute()
     }
 
     neuralNet->run(dataSet);
+    neuralNet->printTrace();
 
     if (this->dsType == DataSetFactory::CLASSIFIER)
-    {
         neuralNet->test(this->dsFactory.getDataSet(DataSetFactory::CLASSIFIER_TEST));
-    }
-    else
-    {
-        neuralNet->printTrace();
-    }
 
     free(neuralNet);
 }
