@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1569621108 source:d:\myprojects\neural-networks\main.cpp
+1569867337 source:d:\myprojects\neural-networks\main.cpp
 	"include/nets/NeuralNetwork.h"
 	"include/nets/Perceptron.h"
 	"include/nets/Adaline.h"
@@ -208,7 +208,7 @@
 	"NeuralNetwork.h"
 	"../datasets/DataSet.h"
 
-1569616268 d:\myprojects\neural-networks\include\nets\neuralnetwork.h
+1569864260 d:\myprojects\neural-networks\include\nets\neuralnetwork.h
 	"../common/Log.h"
 	"../common/Trace.h"
 	"../datasets/DataSet.h"
@@ -227,7 +227,7 @@
 	"../datasets/DataSet.h"
 	"NeuralNetwork.h"
 
-1569617674 source:d:\myprojects\neural-networks\src\datasets\datasetfactory.cpp
+1569868524 source:d:\myprojects\neural-networks\src\datasets\datasetfactory.cpp
 	"DataSetFactory.h"
 	"DataSetAndBitwise.h"
 	"DataSetOrBitwise.h"
@@ -236,15 +236,20 @@
 	"DataSetClassifierTest.h"
 	"DataSetVectorClassifier.h"
 
-1569617665 d:\myprojects\neural-networks\include\datasets\datasetfactory.h
+1569864777 d:\myprojects\neural-networks\include\datasets\datasetfactory.h
 	<iostream>
 	"DataSet.h"
 
-1569621313 source:d:\myprojects\neural-networks\src\networkrunner.cpp
+1569869152 source:d:\myprojects\neural-networks\src\networkrunner.cpp
 	"NetworkRunner.h"
 
-1569621175 d:\myprojects\neural-networks\include\networkrunner.h
+1569869033 d:\myprojects\neural-networks\include\networkrunner.h
+	"nets/NeuralNetwork.h"
+	"nets/Perceptron.h"
+	"nets/Adaline.h"
+	"datasets/DataSetFactory.h"
 	<string>
 	<iostream>
 	<fstream>
+	<sstream>
 

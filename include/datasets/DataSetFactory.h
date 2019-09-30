@@ -9,13 +9,16 @@ using namespace std;
 class DataSetFactory
 {
     public:
-        enum DataSetType {
-            AB_PATTERN,
+        enum DataSetType
+        {
+            AB_PATTERN = 1,
             AND_BITWISE,
             CLASSIFIER,
-            CLASSIFIER_TEST,
             OR_BITWISE,
-            VECTOR_CLASSIFIER };
+            VECTOR_CLASSIFIER,
+
+            CLASSIFIER_TEST
+        };
 
         DataSetFactory();
         virtual ~DataSetFactory();

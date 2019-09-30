@@ -40,7 +40,7 @@ void Adaline::run(const DataSet* dataSet)
         error = this->getCurrentQuadraticError();
         log.setError(error);
 
-        this->learningRate *= Adaline::LEARNING_DECREASE;
+        this->learningRate *= this->learningDecrease;
         ++iteration;
 
         this->addLog(log);

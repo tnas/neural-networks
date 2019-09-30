@@ -13,7 +13,7 @@ using namespace std;
 class NeuralNetwork
 {
     public:
-        enum ActivationFuncion { LIMIAR, TANH, BINARY };
+        enum ActivationFuncion { BINARY = 1, LIMIAR, TANH };
 
         NeuralNetwork(float bias, float* weights, unsigned int dimension,
                       float learningRate, float error, unsigned int iterations,

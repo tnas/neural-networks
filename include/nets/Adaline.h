@@ -6,11 +6,12 @@
 
 class Adaline : public NeuralNetwork
 {
-    public:
-        static constexpr float LEARNING_DECREASE = 0.95;
+    const float learningDecrease;
 
-        Adaline(float learningRate, float error, float bias, float* weights,
+    public:
+        Adaline(float learningRate, float error, float bias, float* weights, float learningDecrease,
                 unsigned int dimension, unsigned int iterations, ActivationFuncion actFunction) :
+            learningDecrease(learningDecrease),
             NeuralNetwork(bias, weights, dimension, learningRate, error, iterations, actFunction) {};
         void run(const DataSet* dataSet);
 };
