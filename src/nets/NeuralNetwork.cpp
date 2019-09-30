@@ -64,12 +64,12 @@ float NeuralNetwork::getCurrentQuadraticError()
     return error / 2;
 }
 
-int NeuralNetwork::evaluateIterationError()
+unsigned int NeuralNetwork::evaluateIterationHits()
 {
     float result, output;
-    int countError;
+    int hitsCounter;
 
-    countError = 0;
+    hitsCounter = 0;
 
     for (int sample = 0; sample < this->dataSet->getNumberOfSamples(); sample++)
     {
@@ -83,10 +83,10 @@ int NeuralNetwork::evaluateIterationError()
                 this->getVector(this->inputDimension, this->weights),
                 this->bias, result, output, dataSet->getDesiredOutput()[sample]));
 
-        if (output != dataSet->getDesiredOutput()[sample]) ++countError;
+        if (output == dataSet->getDesiredOutput()[sample]) ++hitsCounter;
     }
 
-    return countError;
+    return hitsCounter;
 }
 
 

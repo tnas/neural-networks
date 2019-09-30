@@ -4,18 +4,21 @@
 void Perceptron::run(const DataSet* dataSet)
 {
     float output, result, error;
-    unsigned int countError, iteration;
+    unsigned int iteration, errorCounter, iterationHits;
     this->dataSet = dataSet;
     iteration = error = 1;
 
     this->weights = new float[this->inputDimension];
-    for (unsigned int i = 0; i < this->inputDimension; this->weights[i++] = 0);
+    this->pocketWeights = new float[this->inputDimension];
+    for (unsigned int i = 0; i < this->inputDimension; ++i)
+        this->weights[i] = this->pocketWeights[i] = 0;
+    this->pocketHits = 0;
 
     do
     {
         Log log;
         log.setIteration(iteration);
-        countError = 0;
+        errorCounter = 0;
 
         for (int sample = 0; sample < dataSet->getNumberOfSamples(); sample++)
         {
@@ -33,7 +36,7 @@ void Perceptron::run(const DataSet* dataSet)
                         dataSet->getDataMatrix()[sample][i];
                 }
                 this->bias += this->learningRate * dataSet->getDesiredOutput()[sample];
-                ++countError;
+                ++errorCounter;
             }
 
             // Tracing
@@ -43,12 +46,26 @@ void Perceptron::run(const DataSet* dataSet)
                 this->bias, result, output, dataSet->getDesiredOutput()[sample]));
         }
 
-        error = (float) countError/dataSet->getNumberOfSamples();
+        error = (float) errorCounter;
         log.setError(error);
         this->addLog(log);
 
+        iterationHits = this->evaluateIterationHits();
+
+        if (iterationHits > this->pocketHits)
+        {
+            for (unsigned int i = 0; i < this->inputDimension; ++i)
+                this->pocketWeights[i] = this->weights[i];
+        }
+
         ++iteration;
-    } while (this->evaluateIterationError() > this->thresholdError && iteration <= this->maxIterations);
+
+    } while (error > this->thresholdError && iteration <= this->maxIterations);
+
+    for (unsigned int i = 0; i < this->inputDimension; ++i)
+        this->weights[i] = this->pocketWeights[i];
+
+    free(this->pocketWeights);
 }
 
 

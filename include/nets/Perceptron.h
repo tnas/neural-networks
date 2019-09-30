@@ -6,6 +6,9 @@
 
 class Perceptron : public NeuralNetwork
 {
+    float* pocketWeights;
+    unsigned int pocketHits;
+
     public:
         Perceptron(float learningRate, float bias, float indefinitionRate, float thresholdError,
                    unsigned int maxIterations, unsigned int dimension,
