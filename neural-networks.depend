@@ -197,7 +197,7 @@
 	"../../include/common/Trace.h"
 	<iostream>
 
-1569944496 source:d:\myprojects\neural-networks\src\nets\adaline.cpp
+1569947553 source:d:\myprojects\neural-networks\src\nets\adaline.cpp
 	"../../include/nets/Adaline.h"
 
 1569870518 d:\myprojects\neural-networks\include\nets\adaline.h
@@ -215,9 +215,8 @@
 1569945535 source:d:\myprojects\neural-networks\src\nets\neuralnetwork.cpp
 	"../../include/nets/NeuralNetwork.h"
 
-1569874889 source:d:\myprojects\neural-networks\src\nets\perceptron.cpp
+1569946127 source:d:\myprojects\neural-networks\src\nets\perceptron.cpp
 	"../../include/nets/Perceptron.h"
-	<iostream>
 
 1569945581 d:\myprojects\neural-networks\include\nets\perceptron.h
 	"../datasets/DataSet.h"

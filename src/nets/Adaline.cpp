@@ -6,7 +6,7 @@ void Adaline::run(const DataSet* dataSet)
     float result, error;
     this->dataSet = dataSet;
     unsigned int iteration = 1;
-    error = 1;
+    error = dataSet->getNumberOfSamples();
 
     do
     {
@@ -37,13 +37,11 @@ void Adaline::run(const DataSet* dataSet)
                 dataSet->getDesiredOutput()[sample]));
         }
 
-        error = this->getCurrentQuadraticError();
-        log.setError(error);
+        this->addLog(log);
+        error = this->evaluateIteration();
 
         this->learningRate *= this->learningDecrease;
         ++iteration;
 
-        this->addLog(log);
-    //} while (error > this->thresholdError && iteration <= this->maxIterations && this->evaluateIteration() < dataSet->getNumberOfSamples());
     } while (error > this->thresholdError && iteration <= this->maxIterations);
 }
