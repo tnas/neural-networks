@@ -1,24 +1,22 @@
 #include "../../include/nets/Perceptron.h"
-#include <iostream>
 
 void Perceptron::run(const DataSet* dataSet)
 {
     float output, result, error;
-    unsigned int iteration, errorCounter, iterationHits;
-    this->dataSet = dataSet;
-    iteration = error = 1;
+    unsigned int iteration;
 
+    this->dataSet = dataSet;
+    iteration = 1;
     this->weights = new float[this->inputDimension];
     this->pocketWeights = new float[this->inputDimension];
     for (unsigned int i = 0; i < this->inputDimension; ++i)
         this->weights[i] = this->pocketWeights[i] = 0;
-    this->pocketHits = 0;
+    this->pocketError = dataSet->getNumberOfSamples();
 
     do
     {
         Log log;
         log.setIteration(iteration);
-        errorCounter = 0;
 
         for (int sample = 0; sample < dataSet->getNumberOfSamples(); sample++)
         {
@@ -35,8 +33,8 @@ void Perceptron::run(const DataSet* dataSet)
                     this->weights[i] += this->learningRate * dataSet->getDesiredOutput()[sample] *
                         dataSet->getDataMatrix()[sample][i];
                 }
+
                 this->bias += this->learningRate * dataSet->getDesiredOutput()[sample];
-                ++errorCounter;
             }
 
             // Tracing
@@ -46,16 +44,14 @@ void Perceptron::run(const DataSet* dataSet)
                 this->bias, result, output, dataSet->getDesiredOutput()[sample]));
         }
 
-        error = (float) errorCounter;
-        log.setError(error);
         this->addLog(log);
+        error = this->evaluateIteration();
 
-        iterationHits = this->evaluateIterationHits();
-
-        if (iterationHits > this->pocketHits)
+        if (error < this->pocketError)
         {
             for (unsigned int i = 0; i < this->inputDimension; ++i)
                 this->pocketWeights[i] = this->weights[i];
+            this->pocketError = error;
         }
 
         ++iteration;

@@ -197,14 +197,14 @@
 	"../../include/common/Trace.h"
 	<iostream>
 
-1569873405 source:d:\myprojects\neural-networks\src\nets\adaline.cpp
+1569944496 source:d:\myprojects\neural-networks\src\nets\adaline.cpp
 	"../../include/nets/Adaline.h"
 
 1569870518 d:\myprojects\neural-networks\include\nets\adaline.h
 	"NeuralNetwork.h"
 	"../datasets/DataSet.h"
 
-1569874850 d:\myprojects\neural-networks\include\nets\neuralnetwork.h
+1569945492 d:\myprojects\neural-networks\include\nets\neuralnetwork.h
 	"../common/Log.h"
 	"../common/Trace.h"
 	"../datasets/DataSet.h"
@@ -212,14 +212,14 @@
 	<vector>
 	<math.h>
 
-1569874826 source:d:\myprojects\neural-networks\src\nets\neuralnetwork.cpp
+1569945535 source:d:\myprojects\neural-networks\src\nets\neuralnetwork.cpp
 	"../../include/nets/NeuralNetwork.h"
 
 1569874889 source:d:\myprojects\neural-networks\src\nets\perceptron.cpp
 	"../../include/nets/Perceptron.h"
 	<iostream>
 
-1569873449 d:\myprojects\neural-networks\include\nets\perceptron.h
+1569945581 d:\myprojects\neural-networks\include\nets\perceptron.h
 	"../datasets/DataSet.h"
 	"NeuralNetwork.h"
 

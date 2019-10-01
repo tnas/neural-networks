@@ -44,5 +44,6 @@ void Adaline::run(const DataSet* dataSet)
         ++iteration;
 
         this->addLog(log);
-    } while (error > this->thresholdError && iteration <= this->maxIterations && this->evaluateIterationHits() < dataSet->getNumberOfSamples());
+    //} while (error > this->thresholdError && iteration <= this->maxIterations && this->evaluateIteration() < dataSet->getNumberOfSamples());
+    } while (error > this->thresholdError && iteration <= this->maxIterations);
 }
