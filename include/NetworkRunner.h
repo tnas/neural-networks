@@ -4,6 +4,7 @@
 #include "nets/NeuralNetwork.h"
 #include "nets/Perceptron.h"
 #include "nets/Adaline.h"
+#include "nets/HardKohonen.h"
 #include "datasets/DataSetFactory.h"
 #include <string>
 #include <iostream>
@@ -38,7 +39,7 @@ class NetworkRunner
         const string CONF_PARAM_DATA_SET = "DATA_SET";
         const string CONF_PARAM_WEIGHTS = "WEIGHTS";
 
-        enum NetType { PERCEPTRON = 1, ADALINE };
+        enum NetType { PERCEPTRON = 1, ADALINE, MLP, HEBBE, HARD_KOHONEN };
 
         DataSetFactory dsFactory;
         NetworkRunner::NetType netType;

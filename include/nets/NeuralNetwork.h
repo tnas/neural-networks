@@ -13,7 +13,7 @@ using namespace std;
 class NeuralNetwork
 {
     public:
-        enum ActivationFuncion { BINARY = 1, LIMIAR, TANH };
+        enum ActivationFuncion { NOP, BINARY, LIMIAR, TANH };
 
         NeuralNetwork(float bias, float* weights, unsigned int dimension,
                       float learningRate, float error, unsigned int iterations,
@@ -29,6 +29,7 @@ class NeuralNetwork
         virtual ~NeuralNetwork();
 
         float dotProduct(float* sample, float* weights, int dim);
+        float euclideanDistance(float* sample, float* weights, int dim);
         void test(const DataSet* dataSet);
         void addLog(Log log);
         void printTrace();

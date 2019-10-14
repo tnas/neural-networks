@@ -7,8 +7,12 @@ class DataSet
     protected:
         int numberOfSamples;
         int inputDimension;
+        unsigned int numberOfNeurons;
         float** dataMatrix;
+        float** weightMatrix;
         float* desiredOutput;
+
+        void prepareWeightMatrix(unsigned int neurons);
 
     public:
         DataSet(int numberOfSamples, int inputDimension);
@@ -16,12 +20,15 @@ class DataSet
 
         virtual void buildDataMatrix() = 0;
         virtual void defineDesiredOutput() = 0;
+        virtual void defineWeightMatrix() = 0;
 
         void printDesiredOutput();
         void printDataMatrix();
         int getInputDimension() const;
         int getNumberOfSamples() const;
+        unsigned int getNumberOfNeurons() const;
         float** getDataMatrix() const;
+        float** getWeightMatrix() const;
         float* getDesiredOutput() const;
 };
 

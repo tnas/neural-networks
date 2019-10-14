@@ -36,6 +36,9 @@ void NetworkRunner::loadConfigurations()
                     case NetType::ADALINE :
                         this->netType = NetType::ADALINE;
                         break;
+                    case NetType::HARD_KOHONEN :
+                        this->netType = NetType::HARD_KOHONEN;
+                        break;
                     default :
                         cerr << "Invalid net configuration!" << endl;
                         exit(1);
@@ -80,6 +83,9 @@ void NetworkRunner::loadConfigurations()
                     sline >> actFunction;
                     switch (actFunction)
                     {
+                    case NeuralNetwork::NOP :
+                        this->activationFunction = NeuralNetwork::NOP;
+                        break;
                     case NeuralNetwork::BINARY :
                         this->activationFunction = NeuralNetwork::BINARY;
                         break;
@@ -133,7 +139,7 @@ void NetworkRunner::loadConfigurations()
 
 void NetworkRunner::execute()
 {
-    const DataSet* dataSet = this->dsFactory.getDataSet(this->dsType);
+    DataSet* dataSet = this->dsFactory.getDataSet(this->dsType);
     NeuralNetwork* neuralNet;
 
     switch (this->netType)
@@ -147,6 +153,15 @@ void NetworkRunner::execute()
         neuralNet = new Adaline(this->learningRate, this->thresholdError, this->bias, this->weights,
                                 this->learningDecrease, this->inputDimension, this->maxIterations,
                                 this->activationFunction);
+    case NetType::MLP :
+        break;
+
+    case NetType::HEBBE :
+        break;
+
+    case NetType::HARD_KOHONEN :
+        neuralNet = new HardKohonen(this->learningRate, this->thresholdError, 0.0, nullptr, this->inputDimension,
+                                    this->maxIterations, NeuralNetwork::ActivationFuncion::NOP);
         break;
     }
 

@@ -5,6 +5,7 @@ using namespace std;
 
 DataSet::DataSet(int numberOfSamples, int inputDimension)
 {
+    this->weightMatrix = nullptr;
     this->numberOfSamples = numberOfSamples;
     this->inputDimension = inputDimension;
 
@@ -27,6 +28,26 @@ DataSet::~DataSet()
     }
 
     delete(this->dataMatrix);
+
+    if (this->weightMatrix != nullptr)
+    {
+        for (unsigned int i = 0; i < this->numberOfNeurons; i++)
+        {
+            delete(this->weightMatrix[i]);
+        }
+
+        delete(this->weightMatrix);
+    }
+}
+
+void DataSet::prepareWeightMatrix(unsigned int neurons)
+{
+    this->numberOfNeurons = neurons;
+    this->weightMatrix = new float*[this->numberOfNeurons];
+    for (unsigned int i = 0; i < this->numberOfNeurons; i++)
+    {
+        this->weightMatrix[i] = new float[this->inputDimension];
+    }
 }
 
 void DataSet::printDesiredOutput()
@@ -70,5 +91,14 @@ float* DataSet::getDesiredOutput() const
     return this->desiredOutput;
 }
 
+float** DataSet::getWeightMatrix() const
+{
+    return this->weightMatrix;
+}
+
+unsigned int DataSet::getNumberOfNeurons() const
+{
+    return this->numberOfNeurons;
+}
 
 

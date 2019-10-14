@@ -1,10 +1,4 @@
-#include "DataSetFactory.h"
-#include "DataSetAndBitwise.h"
-#include "DataSetOrBitwise.h"
-#include "DataSetABPattern.h"
-#include "DataSetClassifier.h"
-#include "DataSetClassifierTest.h"
-#include "DataSetVectorClassifier.h"
+#include "../../include/datasets/DataSetFactory.h"
 
 DataSetFactory::DataSetFactory()
 {
@@ -48,10 +42,14 @@ DataSet* DataSetFactory::getDataSet(DataSetType type)
         case DataSetType::CLASSIFIER_TEST :
             this->dataSets[ds] = new DataSetClassifierTest(8, 2);
             break;
+        case DataSetType::AFKRS12 :
+            this->dataSets[ds] = new DataSetAFKRS12(7, 5);
+            break;
         }
 
         this->dataSets[ds]->buildDataMatrix();
         this->dataSets[ds]->defineDesiredOutput();
+        this->dataSets[ds]->defineWeightMatrix();
     }
 
     return this->dataSets[ds];

@@ -104,6 +104,18 @@ float NeuralNetwork::dotProduct(float* sample, float* weights, int dim)
 }
 
 
+float NeuralNetwork::euclideanDistance(float* sample, float* weights, int dim)
+{
+    float sum = 0;
+    for (int i = 0; i < dim; ++i)
+    {
+        sum += pow((sample[i] - weights[i]), 2.0);
+    }
+
+    return sum;
+}
+
+
 void NeuralNetwork::test(const DataSet* dataSet)
 {
     float output, result;
