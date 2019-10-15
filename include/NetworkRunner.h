@@ -38,6 +38,8 @@ class NetworkRunner
         const string CONF_PARAM_ACTIVATION_FUNCTION = "ACTIVATION_FUNCTION";
         const string CONF_PARAM_DATA_SET = "DATA_SET";
         const string CONF_PARAM_WEIGHTS = "WEIGHTS";
+        const string CONF_PARAM_RADIUS = "RADIUS";
+        const string CONF_PARAM_RADIUS_DECREASE_RATE = "RADIUS_DECREASE_RATE";
 
         enum NetType { PERCEPTRON = 1, ADALINE, MLP, HEBBE, HARD_KOHONEN };
 
@@ -51,6 +53,8 @@ class NetworkRunner
         float indefinitionRate;
         float learningDecrease;
         float* weights;
+        unsigned int radius;
+        float radiusDecreaseRate;
         NeuralNetwork::ActivationFuncion activationFunction;
         DataSetFactory::DataSetType dsType;
 };

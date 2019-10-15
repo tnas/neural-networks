@@ -140,7 +140,7 @@
 1569609356 source:d:\myprojects\neural-networks\src\log.cpp
 	"Log.h"
 
-1571093127 d:\myprojects\neural-networks\include\datasets\dataset.h
+1571163446 d:\myprojects\neural-networks\include\datasets\dataset.h
 
 1569513698 d:\myprojects\neural-networks\include\datasets\datasetandbitwise.h
 	"DataSet.h"
@@ -225,7 +225,7 @@
 1571092224 source:d:\myprojects\neural-networks\src\datasets\datasetfactory.cpp
 	"../../include/datasets/DataSetFactory.h"
 
-1571088231 d:\myprojects\neural-networks\include\datasets\datasetfactory.h
+1571164641 d:\myprojects\neural-networks\include\datasets\datasetfactory.h
 	<iostream>
 	"DataSet.h"
 	"DataSetFactory.h"
@@ -237,10 +237,10 @@
 	"DataSetVectorClassifier.h"
 	"DataSetAFKRS12.h"
 
-1571092599 source:d:\myprojects\neural-networks\src\networkrunner.cpp
+1571166004 source:d:\myprojects\neural-networks\src\networkrunner.cpp
 	"NetworkRunner.h"
 
-1571084586 d:\myprojects\neural-networks\include\networkrunner.h
+1571165739 d:\myprojects\neural-networks\include\networkrunner.h
 	"nets/NeuralNetwork.h"
 	"nets/Perceptron.h"
 	"nets/Adaline.h"
@@ -251,7 +251,7 @@
 	<fstream>
 	<sstream>
 
-1571089293 d:\myprojects\neural-networks\include\nets\hardkohonen.h
+1571165937 d:\myprojects\neural-networks\include\nets\hardkohonen.h
 	"NeuralNetwork.h"
 	<limits>
 

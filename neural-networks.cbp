@@ -15,6 +15,7 @@
 					<Add option="-g" />
 					<Add directory="include" />
 					<Add directory="include/datasets" />
+					<Add directory="include/nets" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -26,6 +27,7 @@
 					<Add option="-O2" />
 					<Add directory="include" />
 					<Add directory="include/datasets" />
+					<Add directory="include/nets" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -41,6 +43,7 @@
 		<Unit filename="include/common/Trace.h" />
 		<Unit filename="include/datasets/DataSet.h" />
 		<Unit filename="include/datasets/DataSetABPattern.h" />
+		<Unit filename="include/datasets/DataSetAFKRS12.h" />
 		<Unit filename="include/datasets/DataSetAndBitwise.h" />
 		<Unit filename="include/datasets/DataSetClassifier.h" />
 		<Unit filename="include/datasets/DataSetClassifierTest.h" />
@@ -48,6 +51,7 @@
 		<Unit filename="include/datasets/DataSetOrBitwise.h" />
 		<Unit filename="include/datasets/DataSetVectorClassifier.h" />
 		<Unit filename="include/nets/Adaline.h" />
+		<Unit filename="include/nets/HardKohonen.h" />
 		<Unit filename="include/nets/NeuralNetwork.h" />
 		<Unit filename="include/nets/Perceptron.h" />
 		<Unit filename="main.cpp" />
@@ -57,6 +61,7 @@
 		<Unit filename="src/common/Trace.cpp" />
 		<Unit filename="src/datasets/DataSet.cpp" />
 		<Unit filename="src/datasets/DataSetABPattern.cpp" />
+		<Unit filename="src/datasets/DataSetAFKRS12.cpp" />
 		<Unit filename="src/datasets/DataSetAndBitwise.cpp" />
 		<Unit filename="src/datasets/DataSetClassifier.cpp" />
 		<Unit filename="src/datasets/DataSetClassifierTest.cpp" />
@@ -64,6 +69,7 @@
 		<Unit filename="src/datasets/DataSetOrBitwise.cpp" />
 		<Unit filename="src/datasets/DataSetVectorClassifier.cpp" />
 		<Unit filename="src/nets/Adaline.cpp" />
+		<Unit filename="src/nets/HardKohonen.cpp" />
 		<Unit filename="src/nets/NeuralNetwork.cpp" />
 		<Unit filename="src/nets/Perceptron.cpp" />
 		<Extensions>

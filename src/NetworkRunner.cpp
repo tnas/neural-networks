@@ -78,6 +78,14 @@ void NetworkRunner::loadConfigurations()
                 {
                     sline >> this->learningDecrease;
                 }
+                else if (keyConf.compare(NetworkRunner::CONF_PARAM_RADIUS) == 0)
+                {
+                    sline >> this->radius;
+                }
+                else if (keyConf.compare(NetworkRunner::CONF_PARAM_RADIUS_DECREASE_RATE) == 0)
+                {
+                    sline >> this->radiusDecreaseRate;
+                }
                 else if (keyConf.compare(NetworkRunner::CONF_PARAM_ACTIVATION_FUNCTION) == 0)
                 {
                     sline >> actFunction;
@@ -120,6 +128,9 @@ void NetworkRunner::loadConfigurations()
                     case DataSetFactory::VECTOR_CLASSIFIER :
                         this->dsType = DataSetFactory::VECTOR_CLASSIFIER;
                         break;
+                    case DataSetFactory::AFKRS12 :
+                        this->dsType = DataSetFactory::AFKRS12;
+                        break;
                     default :
                         cerr << "Invalid data set configuration!" << endl;
                         exit(1);
@@ -160,7 +171,8 @@ void NetworkRunner::execute()
         break;
 
     case NetType::HARD_KOHONEN :
-        neuralNet = new HardKohonen(this->learningRate, this->thresholdError, 0.0, nullptr, this->inputDimension,
+        neuralNet = new HardKohonen(this->learningRate, this->thresholdError, 0.0, nullptr, this->learningDecrease,
+                                    this->radius, this->radiusDecreaseRate, this->inputDimension,
                                     this->maxIterations, NeuralNetwork::ActivationFuncion::NOP);
         break;
     }

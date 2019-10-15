@@ -24,8 +24,8 @@ class DataSetFactory
             CLASSIFIER,
             OR_BITWISE,
             VECTOR_CLASSIFIER,
-            CLASSIFIER_TEST,
             AFKRS12,
+            CLASSIFIER_TEST
         };
 
         DataSetFactory();

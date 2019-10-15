@@ -1,4 +1,4 @@
-#include "HardKohonen.h"
+#include "../../include/nets/HardKohonen.h"
 
 
 void HardKohonen::run(const DataSet* dataSet)
@@ -34,13 +34,21 @@ void HardKohonen::run(const DataSet* dataSet)
                 dataSet->getWeightMatrix()[winnerNeuron][coord] += this->learningRate *
                     (dataSet->getDataMatrix()[sample][coord] - dataSet->getWeightMatrix()[winnerNeuron][coord]);
             }
+
+            log.addTrace(Trace(
+                this->getVector(this->inputDimension, dataSet->getDataMatrix()[sample]),
+                this->getVector(this->inputDimension, this->weights),
+                this->bias, result, this->applyActivationFunction(result),
+                dataSet->getDesiredOutput()[sample]));
         }
 
         this->addLog(log);
 
         ++iteration;
+        this->learningRate *= this->learningDecrease;
+        this->radius *= this->radiusDecreaseRate;
 
-    } while(iteration <= this->maxIterations);
+    } while(iteration <= this->maxIterations && this->learningRate > 0 && this->radius > 0);
 
     free(distance);
 }

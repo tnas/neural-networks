@@ -20,7 +20,7 @@ class DataSet
 
         virtual void buildDataMatrix() = 0;
         virtual void defineDesiredOutput() = 0;
-        virtual void defineWeightMatrix() = 0;
+        virtual void defineWeightMatrix() {};
 
         void printDesiredOutput();
         void printDataMatrix();
