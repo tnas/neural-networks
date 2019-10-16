@@ -1,5 +1,4 @@
 #include "../../include/common/Trace.h"
-#include <iostream>
 
 Trace::~Trace()
 {

@@ -3,10 +3,12 @@
 
 #include "../common/Log.h"
 #include "../common/Trace.h"
+#include "../common/KohonenTrace.h"
 #include "../datasets/DataSet.h"
 #include <iostream>
 #include <vector>
 #include <math.h>
+#include <cstring>
 
 using namespace std;
 

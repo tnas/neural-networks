@@ -10,6 +10,8 @@ void HardKohonen::run(const DataSet* dataSet)
     {
         Log log;
         log.setIteration(iteration);
+        log.setLearningRate(this->learningRate);
+        log.setRadius(this->radius);
 
         for (int sample = 0; sample < dataSet->getNumberOfSamples(); ++sample)
         {
@@ -35,11 +37,23 @@ void HardKohonen::run(const DataSet* dataSet)
                     (dataSet->getDataMatrix()[sample][coord] - dataSet->getWeightMatrix()[winnerNeuron][coord]);
             }
 
-            log.addTrace(Trace(
-                this->getVector(this->inputDimension, dataSet->getDataMatrix()[sample]),
-                this->getVector(this->inputDimension, this->weights),
-                this->bias, result, this->applyActivationFunction(result),
-                dataSet->getDesiredOutput()[sample]));
+            // Generating snapshot of weights and distance
+            vector<vector<float>> currWeights;
+            vector<float> currDistance;
+            for (unsigned int n = 0; n < dataSet->getNumberOfNeurons(); ++n)
+            {
+                vector<float> neuron;
+                for (int coord = 0; coord < dataSet->getInputDimension(); ++coord)
+                {
+                    neuron.push_back(dataSet->getWeightMatrix()[n][coord]);
+                }
+                currWeights.push_back(neuron);
+                currDistance.push_back(distance[n]);
+            }
+
+            // Tracing the iteration
+            log.addKohonenTrace(KohonenTrace(currDistance, winnerNeuron, dataSet->getNumberOfNeurons(),
+                     currWeights, dataSet->getInputDimension(), dataSet->getDataMatrix()[sample]));
         }
 
         this->addLog(log);

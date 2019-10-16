@@ -53,7 +53,7 @@ class NetworkRunner
         float indefinitionRate;
         float learningDecrease;
         float* weights;
-        unsigned int radius;
+        float radius;
         float radiusDecreaseRate;
         NeuralNetwork::ActivationFuncion activationFunction;
         DataSetFactory::DataSetType dsType;

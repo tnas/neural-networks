@@ -9,12 +9,12 @@ using namespace std;
 class HardKohonen : public NeuralNetwork
 {
     const float learningDecrease;
-    unsigned int radius;
+    float radius;
     const float radiusDecreaseRate;
 
     public:
         HardKohonen(float learningRate, float error, float bias, float* weights, float learningDecrease,
-                    unsigned int radius, float radiusDecRate, unsigned int dimension, unsigned int iterations,
+                    float radius, float radiusDecRate, unsigned int dimension, unsigned int iterations,
                     ActivationFuncion actFunction) :
             NeuralNetwork(bias, weights, dimension, learningRate, error, iterations, actFunction),
             learningDecrease(learningDecrease),
