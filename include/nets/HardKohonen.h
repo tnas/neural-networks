@@ -24,7 +24,7 @@ class HardKohonen : public NeuralNetwork
             radiusDecreaseRate(radiusDecRate),
             distance(nullptr) {};
         ~HardKohonen();
-        unsigned int getWinnerNeuron(float* input, unsigned int numberOfNeurons, int dimension);
+        unsigned int getWinnerNeuron(float* input, const DataSet* dataSet);
         void run(const DataSet* dataSet);
         void test(const DataSet* dataSet);
 

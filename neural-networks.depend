@@ -254,12 +254,12 @@
 	<fstream>
 	<sstream>
 
-1571776434 d:\myprojects\neural-networks\include\nets\hardkohonen.h
+1571777302 d:\myprojects\neural-networks\include\nets\hardkohonen.h
 	"NeuralNetwork.h"
 	<limits>
 	<iostream>
 
-1571776589 source:d:\myprojects\neural-networks\src\nets\hardkohonen.cpp
+1571777330 source:d:\myprojects\neural-networks\src\nets\hardkohonen.cpp
 	"../../include/nets/HardKohonen.h"
 
 1571775129 source:d:\myprojects\neural-networks\src\datasets\datasetafkrs12.cpp

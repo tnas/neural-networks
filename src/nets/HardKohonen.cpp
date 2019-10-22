@@ -8,14 +8,16 @@ HardKohonen::~HardKohonen()
 }
 
 
-unsigned int HardKohonen::getWinnerNeuron(float* input, unsigned int numberOfNeurons, int dimension)
+unsigned int HardKohonen::getWinnerNeuron(float* input, const DataSet* dataSet)
 {
     unsigned int winnerNeuron = 0;
     float minDistance = numeric_limits<float>::max();
 
-    for (unsigned int neuron = 0; neuron < numberOfNeurons; ++neuron)
+    for (unsigned int neuron = 0; neuron < dataSet->getNumberOfNeurons(); ++neuron)
     {
-        this->distance[neuron] = this->euclideanDistance(input, dataSet->getWeightMatrix()[neuron], dimension);
+
+        this->distance[neuron] = this->euclideanDistance(input, dataSet->getWeightMatrix()[neuron],
+            dataSet->getInputDimension());
 
         if (this->distance[neuron] < minDistance)
         {
@@ -42,8 +44,7 @@ void HardKohonen::run(const DataSet* dataSet)
 
         for (int sample = 0; sample < dataSet->getNumberOfSamples(); ++sample)
         {
-            unsigned int winnerNeuron = this->getWinnerNeuron(dataSet->getDataMatrix()[sample],
-                dataSet->getNumberOfNeurons(), dataSet->getInputDimension());
+            unsigned int winnerNeuron = this->getWinnerNeuron(dataSet->getDataMatrix()[sample], dataSet);
 
 //            float minDistance = numeric_limits<float>::max();
 //
@@ -102,8 +103,7 @@ void HardKohonen::test(const DataSet* dataSet)
 
     for (int test = 0; test < dataSet->getNumberOfTests(); ++test)
     {
-        winNeuron = this->getWinnerNeuron(dataSet->getTestMatrix()[test],
-            dataSet->getNumberOfNeurons(), dataSet->getInputDimension());
+        winNeuron = this->getWinnerNeuron(dataSet->getTestMatrix()[test], dataSet);
         error = this->getMediumQuadraticError(dataSet->getTestMatrix()[test],
                             dataSet->getWeightMatrix()[winNeuron], dataSet->getInputDimension());
 
