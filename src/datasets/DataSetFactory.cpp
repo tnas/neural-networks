@@ -43,7 +43,7 @@ DataSet* DataSetFactory::getDataSet(DataSetType type)
             this->dataSets[ds] = new DataSetClassifierTest(8, 2);
             break;
         case DataSetType::AFKRS12 :
-            this->dataSets[ds] = new DataSetAFKRS12(7, 5);
+            this->dataSets[ds] = new DataSetAFKRS12(7, 4, 5);
             break;
         }
 

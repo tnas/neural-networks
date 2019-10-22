@@ -6,13 +6,13 @@
 class DataSetAFKRS12 : public DataSet
 {
     public:
-        const unsigned int NUMBER_OF_NEURONS = 6;
+        static const unsigned int NUMBER_OF_NEURONS = 6;
 
-        DataSetAFKRS12(int numberOfSamples, int inputDimension):
-            DataSet(numberOfSamples, inputDimension) {};
+        DataSetAFKRS12(int numberOfSamples, int numberOfTests, int inputDimension):
+            DataSet(numberOfSamples, numberOfTests, inputDimension, NUMBER_OF_NEURONS) {};
         void buildDataMatrix();
-        void defineDesiredOutput();
         void defineWeightMatrix();
+        void defineTestMatrix();
 };
 
 #endif // DATASETAFKRS12_H

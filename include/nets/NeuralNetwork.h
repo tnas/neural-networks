@@ -39,6 +39,7 @@ class NeuralNetwork
         void setIndefinitionRate(float indefinitionRate);
         float applyActivationFunction(float result);
         float getCurrentQuadraticError();
+        float getMediumQuadraticError(float* input, float* base, unsigned int dimension);
         float evaluateIteration();
 
         virtual void run(const DataSet* dataSet) = 0;

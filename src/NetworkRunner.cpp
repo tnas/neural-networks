@@ -180,6 +180,19 @@ void NetworkRunner::execute()
     neuralNet->run(dataSet);
     neuralNet->printTrace();
 
+    switch (this->netType)
+    {
+        case NetType::PERCEPTRON :
+        case NetType::ADALINE :
+        case NetType::MLP :
+        case NetType::HEBBE :
+            break;
+
+        case NetType::HARD_KOHONEN :
+            neuralNet->test(dataSet);
+            break;
+    }
+
     if (this->dsType == DataSetFactory::CLASSIFIER)
         neuralNet->test(this->dsFactory.getDataSet(DataSetFactory::CLASSIFIER_TEST));
 

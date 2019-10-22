@@ -57,14 +57,40 @@ void DataSetAFKRS12::buildDataMatrix()
     this->dataMatrix[row][4] = 2;
 }
 
-void DataSetAFKRS12::defineDesiredOutput()
+void DataSetAFKRS12::defineTestMatrix()
 {
+    unsigned int row = 0;
 
+    this->testMatrix[row][0] = 3;
+    this->testMatrix[row][1] = 3;
+    this->testMatrix[row][2] = 3;
+    this->testMatrix[row][3] = 4;
+    this->testMatrix[row][4] = 0;
+    ++row;
+
+    this->testMatrix[row][0] = 3;
+    this->testMatrix[row][1] = 3;
+    this->testMatrix[row][2] = 6;
+    this->testMatrix[row][3] = 2;
+    this->testMatrix[row][4] = 6;
+    ++row;
+
+    this->testMatrix[row][0] = 3;
+    this->testMatrix[row][1] = 0;
+    this->testMatrix[row][2] = 0;
+    this->testMatrix[row][3] = 0;
+    this->testMatrix[row][4] = 0;
+    ++row;
+
+    this->testMatrix[row][0] = 3;
+    this->testMatrix[row][1] = 3;
+    this->testMatrix[row][2] = 2;
+    this->testMatrix[row][3] = 0;
+    this->testMatrix[row][4] = 0;
 }
 
 void DataSetAFKRS12::defineWeightMatrix()
 {
-    this->prepareWeightMatrix(NUMBER_OF_NEURONS);
     unsigned int row = 0;
 
     this->weightMatrix[row][0] = 0.1;

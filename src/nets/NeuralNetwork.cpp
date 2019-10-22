@@ -64,6 +64,18 @@ float NeuralNetwork::getCurrentQuadraticError()
     return error / 2;
 }
 
+float NeuralNetwork::getMediumQuadraticError(float* input, float* base, unsigned int dimension)
+{
+    float error = 0;
+
+    for (unsigned int pos = 0; pos < dimension; pos++)
+    {
+        error += pow((input[pos] - base[pos]), 2.0);
+    }
+
+    return error / dimension;
+}
+
 float NeuralNetwork::evaluateIteration()
 {
     float result, output;

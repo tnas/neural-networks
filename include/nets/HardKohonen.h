@@ -3,6 +3,7 @@
 
 #include "NeuralNetwork.h"
 #include <limits>
+#include <iostream>
 
 using namespace std;
 
@@ -11,6 +12,7 @@ class HardKohonen : public NeuralNetwork
     const float learningDecrease;
     float radius;
     const float radiusDecreaseRate;
+    float* distance;
 
     public:
         HardKohonen(float learningRate, float error, float bias, float* weights, float learningDecrease,
@@ -19,8 +21,12 @@ class HardKohonen : public NeuralNetwork
             NeuralNetwork(bias, weights, dimension, learningRate, error, iterations, actFunction),
             learningDecrease(learningDecrease),
             radius(radius),
-            radiusDecreaseRate(radiusDecRate) {};
+            radiusDecreaseRate(radiusDecRate),
+            distance(nullptr) {};
+        ~HardKohonen();
+        unsigned int getWinnerNeuron(float* input, unsigned int numberOfNeurons, int dimension);
         void run(const DataSet* dataSet);
+        void test(const DataSet* dataSet);
 
 };
 

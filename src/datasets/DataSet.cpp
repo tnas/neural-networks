@@ -3,11 +3,14 @@
 
 using namespace std;
 
-DataSet::DataSet(int numberOfSamples, int inputDimension)
+DataSet::DataSet(int numberOfSamples, int numberOfTests, int inputDimension, unsigned int neurons)
 {
     this->weightMatrix = nullptr;
+    this->testMatrix = nullptr;
     this->numberOfSamples = numberOfSamples;
+    this->numberOfTests = numberOfTests;
     this->inputDimension = inputDimension;
+    this->numberOfNeurons = neurons;
 
     this->desiredOutput = new float[this->numberOfSamples];
 
@@ -15,6 +18,24 @@ DataSet::DataSet(int numberOfSamples, int inputDimension)
     for (int i = 0; i < this->numberOfSamples; i++)
     {
         this->dataMatrix[i] = new float[this->inputDimension];
+    }
+
+    if (this->numberOfNeurons > 0)
+    {
+        this->weightMatrix = new float*[this->numberOfNeurons];
+        for (unsigned int i = 0; i < this->numberOfNeurons; i++)
+        {
+            this->weightMatrix[i] = new float[this->inputDimension];
+        }
+    }
+
+    if (this->numberOfTests > 0)
+    {
+        this->testMatrix = new float*[this->numberOfTests];
+        for (unsigned int i = 0; i < this->numberOfTests; i++)
+        {
+            this->testMatrix[i] = new float[this->inputDimension];
+        }
     }
 }
 
@@ -38,15 +59,15 @@ DataSet::~DataSet()
 
         delete(this->weightMatrix);
     }
-}
 
-void DataSet::prepareWeightMatrix(unsigned int neurons)
-{
-    this->numberOfNeurons = neurons;
-    this->weightMatrix = new float*[this->numberOfNeurons];
-    for (unsigned int i = 0; i < this->numberOfNeurons; i++)
+    if (this->testMatrix != nullptr)
     {
-        this->weightMatrix[i] = new float[this->inputDimension];
+        for (unsigned int i = 0; i < this->numberOfTests; i++)
+        {
+            delete(this->testMatrix[i]);
+        }
+
+        delete(this->testMatrix);
     }
 }
 
@@ -101,4 +122,13 @@ unsigned int DataSet::getNumberOfNeurons() const
     return this->numberOfNeurons;
 }
 
+float** DataSet::getTestMatrix() const
+{
+    return this->testMatrix;
+}
+
+int DataSet::getNumberOfTests() const
+{
+    return this->numberOfTests;
+}
 
