@@ -32,7 +32,6 @@ class NeuralNetwork
 
         float dotProduct(float* sample, float* weights, int dim);
         float euclideanDistance(float* sample, float* weights, int dim);
-        void test(const DataSet* dataSet);
         void addLog(Log log);
         void printTrace();
         vector<float> getVector(const unsigned int dim, const float* values);
@@ -43,6 +42,7 @@ class NeuralNetwork
         float evaluateIteration();
 
         virtual void run(const DataSet* dataSet) = 0;
+        virtual void test(const DataSet* dataSet);
 
     protected :
         const DataSet* dataSet;

@@ -50,6 +50,7 @@ DataSet* DataSetFactory::getDataSet(DataSetType type)
         this->dataSets[ds]->buildDataMatrix();
         this->dataSets[ds]->defineDesiredOutput();
         this->dataSets[ds]->defineWeightMatrix();
+        this->dataSets[ds]->defineTestMatrix();
     }
 
     return this->dataSets[ds];

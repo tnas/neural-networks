@@ -205,7 +205,7 @@
 	"NeuralNetwork.h"
 	"../datasets/DataSet.h"
 
-1571768225 d:\myprojects\neural-networks\include\nets\neuralnetwork.h
+1571855766 d:\myprojects\neural-networks\include\nets\neuralnetwork.h
 	"../common/Log.h"
 	"../common/Trace.h"
 	"../common/KohonenTrace.h"
@@ -215,7 +215,7 @@
 	<math.h>
 	<cstring>
 
-1571768300 source:d:\myprojects\neural-networks\src\nets\neuralnetwork.cpp
+1571860807 source:d:\myprojects\neural-networks\src\nets\neuralnetwork.cpp
 	"../../include/nets/NeuralNetwork.h"
 
 1569946127 source:d:\myprojects\neural-networks\src\nets\perceptron.cpp
@@ -225,7 +225,7 @@
 	"../datasets/DataSet.h"
 	"NeuralNetwork.h"
 
-1571775283 source:d:\myprojects\neural-networks\src\datasets\datasetfactory.cpp
+1571860735 source:d:\myprojects\neural-networks\src\datasets\datasetfactory.cpp
 	"../../include/datasets/DataSetFactory.h"
 
 1571164641 d:\myprojects\neural-networks\include\datasets\datasetfactory.h
@@ -254,12 +254,12 @@
 	<fstream>
 	<sstream>
 
-1571777302 d:\myprojects\neural-networks\include\nets\hardkohonen.h
+1571856870 d:\myprojects\neural-networks\include\nets\hardkohonen.h
 	"NeuralNetwork.h"
 	<limits>
 	<iostream>
 
-1571777330 source:d:\myprojects\neural-networks\src\nets\hardkohonen.cpp
+1571860800 source:d:\myprojects\neural-networks\src\nets\hardkohonen.cpp
 	"../../include/nets/HardKohonen.h"
 
 1571775129 source:d:\myprojects\neural-networks\src\datasets\datasetafkrs12.cpp

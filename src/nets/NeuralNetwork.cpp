@@ -124,7 +124,7 @@ float NeuralNetwork::euclideanDistance(float* sample, float* weights, int dim)
         sum += pow((sample[i] - weights[i]), 2.0);
     }
 
-    return sum;
+    return sqrt(sum);
 }
 
 

@@ -1,6 +1,5 @@
 #include "../../include/nets/HardKohonen.h"
 
-
 HardKohonen::~HardKohonen()
 {
     if (this->distance != nullptr)
@@ -15,7 +14,6 @@ unsigned int HardKohonen::getWinnerNeuron(float* input, const DataSet* dataSet)
 
     for (unsigned int neuron = 0; neuron < dataSet->getNumberOfNeurons(); ++neuron)
     {
-
         this->distance[neuron] = this->euclideanDistance(input, dataSet->getWeightMatrix()[neuron],
             dataSet->getInputDimension());
 
@@ -45,20 +43,6 @@ void HardKohonen::run(const DataSet* dataSet)
         for (int sample = 0; sample < dataSet->getNumberOfSamples(); ++sample)
         {
             unsigned int winnerNeuron = this->getWinnerNeuron(dataSet->getDataMatrix()[sample], dataSet);
-
-//            float minDistance = numeric_limits<float>::max();
-//
-//            for (unsigned int neuron = 0; neuron < dataSet->getNumberOfNeurons(); ++neuron)
-//            {
-//                distance[neuron] = this->euclideanDistance(dataSet->getDataMatrix()[sample],
-//                    dataSet->getWeightMatrix()[neuron], dataSet->getInputDimension());
-//
-//                if (distance[neuron] < minDistance)
-//                {
-//                    minDistance = distance[neuron];
-//                    winnerNeuron = neuron;
-//                }
-//            }
 
             // Updating winner neuron
             for (int coord = 0; coord < dataSet->getInputDimension(); ++coord)
@@ -101,6 +85,8 @@ void HardKohonen::test(const DataSet* dataSet)
     float error = 0;
     unsigned int winNeuron;
 
+    cout << endl << "Testing:" << endl;
+
     for (int test = 0; test < dataSet->getNumberOfTests(); ++test)
     {
         winNeuron = this->getWinnerNeuron(dataSet->getTestMatrix()[test], dataSet);
@@ -109,13 +95,11 @@ void HardKohonen::test(const DataSet* dataSet)
 
         if (error <= this->thresholdError)
         {
-            cout << "Test " << test << ": Success" << endl;
+            cout << "Test " << test << ": Success (Error = " << error << ", Win: " << winNeuron << ")" << endl;
         }
         else
         {
-            cout << "Test " << test << ": Fail" << endl;
+            cout << "Test " << test << ": Fail (Error = " << error << ", Win: " << winNeuron << ")" << endl;
         }
     }
-
 }
-

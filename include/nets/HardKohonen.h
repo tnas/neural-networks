@@ -27,7 +27,6 @@ class HardKohonen : public NeuralNetwork
         unsigned int getWinnerNeuron(float* input, const DataSet* dataSet);
         void run(const DataSet* dataSet);
         void test(const DataSet* dataSet);
-
 };
 
 #endif // HARDKOHONEN_H
