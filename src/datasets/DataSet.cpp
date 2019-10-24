@@ -32,7 +32,7 @@ DataSet::DataSet(int numberOfSamples, int numberOfTests, int inputDimension, uns
     if (this->numberOfTests > 0)
     {
         this->testMatrix = new float*[this->numberOfTests];
-        for (unsigned int i = 0; i < this->numberOfTests; i++)
+        for (int i = 0; i < this->numberOfTests; i++)
         {
             this->testMatrix[i] = new float[this->inputDimension];
         }
@@ -62,7 +62,7 @@ DataSet::~DataSet()
 
     if (this->testMatrix != nullptr)
     {
-        for (unsigned int i = 0; i < this->numberOfTests; i++)
+        for (int i = 0; i < this->numberOfTests; i++)
         {
             delete(this->testMatrix[i]);
         }
